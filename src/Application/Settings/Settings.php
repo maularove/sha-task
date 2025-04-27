@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Src\Application\Settings;
 
-use App\Application\Settings\SettingsInterface;
+use Src\Application\Settings\SettingsInterface;
 
 class Settings implements SettingsInterface
 {

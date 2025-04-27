@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\DomainException;
+namespace Src\Domain\DomainException;
 
 class DomainRecordNotFoundException extends DomainException
 {

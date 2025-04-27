@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Actions;
+namespace Src\Application\Actions;
 
 use JsonSerializable;
 

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Application\Handlers\HttpErrorHandler;
-use App\Application\Handlers\ShutdownHandler;
-use App\Application\ResponseEmitter\ResponseEmitter;
-use App\Application\Settings\SettingsInterface;
+use Src\Application\Handlers\HttpErrorHandler;
+use Src\Application\Handlers\ShutdownHandler;
+use Src\Application\ResponseEmitter\ResponseEmitter;
+use Src\Application\Settings\SettingsInterface;
 use DI\ContainerBuilder;
 use Slim\Factory\AppFactory;
 use Slim\Factory\ServerRequestCreatorFactory;
