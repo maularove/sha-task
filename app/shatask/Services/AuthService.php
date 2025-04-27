@@ -23,7 +23,7 @@ final class AuthService
                 return $this->usuario;
             }
             if (!isset($this->usuario) || $this->usuario->id != $_SESSION['usuario']) {
-                $this->usuarioRepository = $this->usuario->find($_SESSION['usuario']);
+                $this->usuario = $this->usuarioRepository->find($_SESSION['usuario']);
 
                 return $this->usuario;
             }

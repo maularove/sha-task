@@ -4,6 +4,7 @@ use App\Shatask\Controllers\ListasGetController;
 use App\Shatask\Middlewares\AuthMiddleware;
 use Slim\App;
 use Slim\Routing\RouteCollectorProxy;
+use App\Shatask\Controllers\Auth\LoginGetController;
 
 /*
  * ADMINRRHH APP ROUTES

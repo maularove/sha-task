@@ -39,7 +39,7 @@ return [
     },
 
     DB::class => function (ContainerInterface $container) {
-        $dbname = $container->get('tenant')->db_name;
+        $dbname = $container->get('settings')['db']['name'];
         $user = $container->get('settings')['db']['user'];
         $pass = $container->get('settings')['db']['pass'];
         $host = $container->get('settings')['db']['host'];
@@ -56,31 +56,13 @@ return [
         return new DB($dsn, $user, $pass, $opt);
     },
 
-    DBSAAS::class => function (ContainerInterface $container) {
-        $dbname = $container->get('settings')['db_sass']['name'];
-        $user = $container->get('settings')['db_sass']['user'];
-        $pass = $container->get('settings')['db_sass']['pass'];
-        $host = $container->get('settings')['db_sass']['host'];
-        $charset = $container->get('settings')['db_sass']['charset'];
-
-        $opt = [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES $charset",
-        ];
-
-        $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';';
-
-        return new DBSAAS($dsn, $user, $pass, $opt);
-    },
-
     Flash::class => function () {
         $storage = [];
 
         return new Flash($storage);
     },
 
-    Twig::class => function (ContainerInterface $c, Flash $flash, AuthService    $authService, LanguageService $languageService) {
+    Twig::class => function (ContainerInterface $c, Flash $flash, AuthService $authService, LanguageService $languageService) {
         $settings = $c->get('settings');
         $tenant = $c->get('tenant');
         $templates = [];
@@ -96,24 +78,7 @@ return [
         $extension = pathinfo($img_logo, PATHINFO_EXTENSION);
 
         $twig = Twig::create($templates);
-
-        $twig->getEnvironment()->addGlobal('app_name', $tenant->name);
-        $twig->getEnvironment()->addGlobal('app_logo', "images/" . $tenant->folder . "/logo.$extension?" . time());
-        $twig->getEnvironment()->addGlobal('app_lang', $tenant->language);
-        $twig->getEnvironment()->addGlobal('app_year', $tenant->year);
-        $twig->getEnvironment()->addGlobal('bia360_email', $tenant->bia360_email);
-        $twig->getEnvironment()->addGlobal('cron', $tenant->cron);
-        $twig->getEnvironment()->addGlobal('cron_mail', $tenant->cron_mail);
         $twig->getEnvironment()->addGlobal('uploads_paths', $settings['twig']['uploads']);
-
-        $twig->getEnvironment()->addGlobal('auth', [
-            'department' => $authService->getDepartment(),
-            'check' => $authService->check(),
-            'check_superadmin' => $authService->checkSuperAdmin(),
-            'check_lector' => $authService->checkLector(),
-            'check_company' => $authService->checkCompany(),
-            'check_acreditator' => $authService->checkAcreditador(),
-        ]);
 
         $twig->getEnvironment()->addGlobal('flash', $flash);
         
