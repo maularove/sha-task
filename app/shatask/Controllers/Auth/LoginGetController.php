@@ -21,7 +21,7 @@ final class LoginGetController extends FrontController
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         if ($this->authService->check()) {
-            return RouteHelpers::redirect($request, $response, 'adminrrhh.dashboard.get');
+            return RouteHelpers::redirect($request, $response, 'shatask.listas.get.list');
         }
 
         return $this->twig->render($response, '@shatask/login.twig');

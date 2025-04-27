@@ -2,7 +2,6 @@
 
 namespace App\Shatask\Services;
 
-
 use App\Shatask\Repositories\UsuarioRepository;
 use App\Shared\Services\LanguageService;
 use App\Shatask\Models\Usuario;
@@ -10,21 +9,24 @@ use Slim\Flash\Messages as Flash;
 
 final class AuthService
 {
-    private ?Usuario  $usuario;
-    public function __construct(private readonly usuarioRepository $usuarioRepository, private readonly Flash $flash, private readonly LanguageService $languageService)
-    {
+    private ?Usuario $usuario;
+
+    public function __construct(
+        private readonly UsuarioRepository $usuarioRepository, // Corregido: Tipo y nombre coinciden
+        private readonly Flash $flash,
+        private readonly LanguageService $languageService
+    ) {
         $this->usuario = $this->getUsuario();
     }
 
     public function getUsuario(): ?Usuario
     {
-        if (isset($_SESSION['usuarios'])) {
+        if (isset($_SESSION['usuario'])) {
             if (isset($this->usuario) && $this->usuario->id == $_SESSION['usuario']) {
                 return $this->usuario;
             }
             if (!isset($this->usuario) || $this->usuario->id != $_SESSION['usuario']) {
                 $this->usuario = $this->usuarioRepository->find($_SESSION['usuario']);
-
                 return $this->usuario;
             }
         }
@@ -33,12 +35,12 @@ final class AuthService
 
     public function check(): bool
     {
-        return isset($this->usuario) ? true : false;
+        return isset($this->usuario);
     }
 
-    public function signIn($usuario, $password): bool
+    public function signIn(string $usuario, string $password): bool
     {
-        $usuario = $this->usuarioRepository->findWhere('WHERE usuario = :usuario ', [
+        $usuario = $this->usuarioRepository->findWhere('WHERE usuario = :usuario', [
             ':usuario' => [
                 'value' => $usuario,
                 'type' => \PDO::PARAM_STR,
@@ -46,8 +48,10 @@ final class AuthService
         ]);
 
         if (!$usuario) {
-            $this->flash->addMessage('error', $this->languageService->getText('¡Error de acceso! - El usuario introducido no se encuentra en el sistema.'));
-
+            $this->flash->addMessage(
+                'error',
+                $this->languageService->getText('¡Error de acceso! - El usuario introducido no se encuentra en el sistema.')
+            );
             return false;
         }
 
@@ -56,16 +60,16 @@ final class AuthService
             return true;
         }
 
-        $this->flash->addMessage('error', $this->languageService->getText('¡Error de acceso! - El password introducido no es correcto.'));
-
+        $this->flash->addMessage(
+            'error',
+            $this->languageService->getText('¡Error de acceso! - El password introducido no es correcto.')
+        );
         return false;
     }
 
     private function passwordCheck(string $password, string $password_db): bool
     {
-        //TODO encriptar
-
-        return $password == $password_db;
+        return password_verify($password, $password_db);
     }
 
     public function logout(): void

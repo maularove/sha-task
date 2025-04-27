@@ -25,7 +25,7 @@ final class AuthMiddleware extends BaseMiddleware
         if (!$this->authService->check()) {
             $response = new Response();
 
-            return RouteHelpers::redirect($request, $response, 'adminrrhh.login.get');
+            return RouteHelpers::redirect($request, $response, 'shatask.login.get');
         }
 
         return $handler->handle($request);
