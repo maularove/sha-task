@@ -12,7 +12,7 @@ use Slim\Routing\RouteCollectorProxy;
  return function (App $app): void {
     $app->group('/shatask', function (RouteCollectorProxy $group): void {
         /* Public ROUTES */
-        // $group->get('/login', LoginGetController::class)->setName('adminrrhh.login.get');
+        $group->get('/login', LoginGetController::class)->setName('shatask.login.get');
         // $group->get('/logout', LogoutPostController::class)->setName('adminrrhh.logout');
         // $group->post('/auth', LoginPostController::class)->setName('adminrrhh.auth');
 
