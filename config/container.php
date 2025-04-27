@@ -64,18 +64,12 @@ return [
 
     Twig::class => function (ContainerInterface $c, Flash $flash, AuthService $authService, LanguageService $languageService) {
         $settings = $c->get('settings');
-        $tenant = $c->get('tenant');
         $templates = [];
         // Obtenemos el nombre del namepspace de los templates
         foreach (glob('../templates/*', GLOB_ONLYDIR) as $dir) {
             $parts = explode('/', $dir);
             $templates[$parts[2]] = $dir;
         }
-        // Obtenemos la extensión de la imagen del logo
-        $target_dir = __DIR__ . "/../public/adminrrhh/images/$tenant->folder/";
-        $filtered_files = array_filter(glob($target_dir . "*"), fn($file) => str_contains((string) $file, 'logo.'));
-        $img_logo = reset($filtered_files);
-        $extension = pathinfo($img_logo, PATHINFO_EXTENSION);
 
         $twig = Twig::create($templates);
         $twig->getEnvironment()->addGlobal('uploads_paths', $settings['twig']['uploads']);

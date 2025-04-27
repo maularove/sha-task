@@ -18,7 +18,7 @@ class BaseRepository
     public function __construct(protected DBInterface $db, protected ContainerInterface $container, string $dbType = 'db')
     {
         if ($dbType == 'db') {
-            $this->prefix = $container->get('tenant')->prefijo_tabla . 'rrhh_';
+            $this->prefix = '';
         } else {
             $this->prefix = $container->get('settings')[$dbType]['prefix'];
         }
