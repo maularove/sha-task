@@ -69,7 +69,7 @@ final class AuthService
 
     private function passwordCheck(string $password, string $password_db): bool
     {
-        return password_verify($password, $password_db);
+        return $password === $password_db;
     }
 
     public function logout(): void
