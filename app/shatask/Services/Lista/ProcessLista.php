@@ -14,19 +14,19 @@ class ProcessLista
 
     public function __construct(protected ContainerInterface $container, protected Validator $validator, protected ListaRepository $listaRepo) {}
 
-    public function process(ServerRequestInterface $request): Lista
+    public function process(array $data): Lista
     {
-        $data = $request->getParsedBody();
-        if(!empty($data['id'])) {
-            $lista = $this->listaRepo->find($data['id']);
+        if (!empty($data['id'])) {
+            $list = $this->listaRepo->find($data['id']);
         } else {
-            $lista = new Lista();
+            $list = new Lista();
         }
-        
-        $lista->lista = $data['nombre'] ?? '';
-        $lista->lista = $data['user_id'] ?? 'null';
-        $lista->lista = $data['descripcion'] ?? '';
-
-        return $lista;
+    
+        $session = $_SESSION ?? [];
+        $userId = $session['usuario'] ?? null;
+        $list->user_id = $userId;
+        $list->nombre = $data['nombre'] ?? '';
+    
+        return $list;
     }
 }

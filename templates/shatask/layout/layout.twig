@@ -1,0 +1,56 @@
+<html>
+	<!--begin::Head-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+		<meta name="author" content="SHATASK"/>
+		<meta name="format-detection" content="telephone=no">
+		<title>SHA-TASK</title>
+
+		<!--begin::Fonts(mandatory for all pages)-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"/>
+		<!--end::Fonts-->
+
+		<!--begin::Vendor Stylesheets(used for this page only)-->
+		<link href="{{ full_path() }}/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css"/> <link href="{{ full_path() }}/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"/>
+		<!--end::Vendor Stylesheets-->
+
+		<!-- Bootstrap CSS for layout styling like behigh -->
+	<link
+		rel="stylesheet" href="{{ full_path() }}/assets/css/bootstrap.min.css"> <!--end::Bootstrap CSS-->
+
+	</head>
+	<!--end::Head-->
+
+	<!--begin::Body-->
+	<body id="kt_app_body" data-kt-app-layout="light-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+		<div class="d-flex" style="height: 100vh;">
+			{% include '@shatask/layout/partials/sidebar.twig' %}
+			{% include '@shatask/layout/components/create-list.twig' %}
+
+			<main class="flex-grow-1 p-4" style="">
+				{% block content %}
+					<!-- Contenido de cada página -->
+				{% endblock %}
+			</main>
+		</div>
+		<!--begin::Javascript-->
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="{{ full_path() }}/assets/js/bootstrap.bundle.min.js"></script>
+		{# // <script src="{{ full_path() }}/assets/js/custom/utilities/modals/users-search.js"></script>
+																// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
+		{% block extraJS %}{% endblock %}
+
+		{% block extraCSS %}
+			<style>
+				.active {
+					background-color: #FFE9E9;
+				}
+			</style>
+		{% endblock %}
+		<!--end::Custom Javascript-->
+		<!--end::Javascript-->
+	</body>
+	<!--end::Body-->
+</html>

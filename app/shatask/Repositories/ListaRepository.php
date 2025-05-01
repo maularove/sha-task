@@ -18,4 +18,11 @@ final class ListaRepository extends BaseRepository
         parent::__construct($db, $container);
     }
 
+    public function findByUserId(int $userId): array
+    {
+        $query = "SELECT * FROM {$this->tableName} WHERE user_id = :user_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute(['user_id' => $userId]);
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, $this->class);
+    }
 }

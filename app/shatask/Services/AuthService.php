@@ -22,10 +22,10 @@ final class AuthService
     public function getUsuario(): ?Usuario
     {
         if (isset($_SESSION['usuario'])) {
-            if (isset($this->usuario) && $this->usuario->id == $_SESSION['usuario']) {
+            if (isset($this->usuario) && $this->usuario->ID == $_SESSION['usuario']) {
                 return $this->usuario;
             }
-            if (!isset($this->usuario) || $this->usuario->id != $_SESSION['usuario']) {
+            if (!isset($this->usuario) || $this->usuario->ID != $_SESSION['usuario']) {
                 $this->usuario = $this->usuarioRepository->find($_SESSION['usuario']);
                 return $this->usuario;
             }
@@ -56,7 +56,7 @@ final class AuthService
         }
 
         if ($this->passwordCheck($password, $usuario->password)) {
-            $_SESSION['usuario'] = $usuario->id;
+            $_SESSION['usuario'] = $usuario->ID;
             return true;
         }
 
@@ -75,5 +75,6 @@ final class AuthService
     public function logout(): void
     {
         unset($_SESSION['usuario']);
+        unset($_SESSION['passwordmd5']);
     }
 }

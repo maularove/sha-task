@@ -23,7 +23,7 @@ use Slim\Routing\RouteCollectorProxy;
 
         /* Authenticated ROUTES */
         $group->group('', function (RouteCollectorProxy $group): void {
-            $group->get('/', ListasGetController::class)->setName('shatask.lista.get');
+            $group->get('/', ListasGetController::class)->setName('shatask.lista.get.list');
             // $group->get('/exportar_excel', ExportGetController::class)->setName('adminrrhh.export_excel');
             // $group->get('/departamentos', DepartmentListGetController::class)->setName('adminrrhh.department.get.list');
             // $group->get('/empresas', CompanyListGetController::class)->setName('adminrrhh.company.get.list');

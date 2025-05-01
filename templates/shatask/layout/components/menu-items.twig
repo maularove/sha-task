@@ -1,0 +1,42 @@
+{% macro menu_item(icon, title, routeName, props = []) %}
+	<div
+		class="menu-item">
+		<!--begin:Menu link-->
+		<a class="menu-link {{ is_current_url(routeName, props) ? 'active' : '' }}" href="{{ url_for(routeName, props) }}">
+			<span class="menu-icon">
+				<i class="ki-outline ki-{{icon}} fs-2"></i>
+			</span>
+			<span class="menu-title">{{ title }}</span>
+		</a>
+		<!--end:Menu link-->
+	</div>
+{% endmacro %}
+{% macro menu_item_url(icon, title, routeLink) %}
+	<div
+		class="menu-item">
+		<!--begin:Menu link-->
+		<a class="menu-link {{ is_current_uri(routeLink) ? 'active': '' }}" href="{{ routeLink }}">
+			<span class="menu-icon">
+				<i class="ki-outline ki-{{icon}} fs-2">
+					{% for i in range(0, iconPathsNumber) %}
+						<span class="path{{i}}"></span>
+					{% endfor %}
+				</i>
+			</span>
+			<span class="menu-title">{{ title }}</span>
+		</a>
+		<!--end:Menu link-->
+	</div>
+{% endmacro %}
+{% macro menu_heading(title) %}
+	<!--begin:Menu item-->
+	<div
+		class="menu-item pt-5">
+		<!--begin:Menu content-->
+		<div class="menu-content">
+			<span class="menu-heading fw-bold text-uppercase fs-7">{{ title }}</span>
+		</div>
+		<!--end:Menu content-->
+	</div>
+	<!--end:Menu item-->
+{% endmacro %}

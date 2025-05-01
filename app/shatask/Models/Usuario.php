@@ -7,7 +7,7 @@ use App\Shared\Models\BaseModel;
 
 final class Usuario extends BaseModel implements ModelInterface
 {
-    public $id;
+    public $ID;
     public $nombre;
     public $usuario;
     public $password;

@@ -65,7 +65,7 @@ return [
     Twig::class => function (ContainerInterface $c, Flash $flash, AuthService $authService, LanguageService $languageService) {
         $settings = $c->get('settings');
         $templates = [];
-        // Obtenemos el nombre del namepspace de los templates
+        // Obtenemos el nombre del namespace de los templates
         foreach (glob('../templates/*', GLOB_ONLYDIR) as $dir) {
             $parts = explode('/', $dir);
             $templates[$parts[2]] = $dir;
@@ -75,7 +75,7 @@ return [
         $twig->getEnvironment()->addGlobal('uploads_paths', $settings['twig']['uploads']);
 
         $twig->getEnvironment()->addGlobal('flash', $flash);
-        
+
         $isCurrentUri = new TwigFunction('is_current_uri', fn($uri) => str_contains($_SERVER['REQUEST_URI'], $uri));
 
         $twig->getEnvironment()->addFunction($isCurrentUri);

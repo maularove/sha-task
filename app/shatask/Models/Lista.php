@@ -7,8 +7,24 @@ use App\Shared\Models\BaseModel;
 
 final class Lista extends BaseModel implements ModelInterface
 {
-    public $id;
+    public $ID;
     public $user_id;
     public $nombre;
-    public $descripcion;
+
+    public const DB_IDENTIFIER = 'ID';
+
+    public function getUpdateValues(): array
+    {
+        return [
+            'user_id',
+            'nombre'
+        ];
+    }
+    public function getCreateValues(): array
+    {
+        return [
+            'user_id',
+            'nombre'
+        ];
+    }
 }

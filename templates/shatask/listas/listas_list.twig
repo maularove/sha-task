@@ -1,1 +1,21 @@
-listas
+{% extends '@shatask/layout/layout.twig' %}
+
+{% block content %}
+	<div class="container">
+		{% for user in users %}
+			<h1 class="text-center mt-4 mb-5">Buenos Dias,
+				{{ user.nombre }}</h1>
+		{% endfor %}
+		<div class="row">
+			{% for list in lists %}
+				<div class="col-md-3 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">{{ list.nombre }}</h5>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
