@@ -22,9 +22,6 @@ class ProcessTarea
             $task = new Tarea();
         }
     
-        // $session = $_SESSION ?? [];
-        // $userId = $session['usuario'] ?? null;
-        // $task->user_id = $userId;
         $task->lista_id = $data['lista_id'] ?? '';
         $task->titulo = $data['titulo'] ?? '';
         $task->descripcion = $data['descripcion'] ?? '';

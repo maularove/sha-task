@@ -2,43 +2,44 @@
 
 {% block content %}
 	<div class="container mt-5">
-    <div class="row align-items-center mb-5 me-5">
-        <div class="col text-start"></div>
-        <div class="col text-center">
-            <h1 class="mb-0">{{ list.nombre | upper }}</h1>
-        </div>
-        <div class="col text-end">
-            <a href="#" class="btn btn-outline-danger">
-                <i class="bi bi-plus-square me-1"></i> new task
-            </a>
-        </div>
-    </div>
+		<div class="row align-items-center mb-5 me-5">
+			<div class="col text-start"></div>
+			<div class="col text-center">
+				<h1 class="mb-0">{{ list.nombre | upper }}</h1>
+			</div>
+			<div class="col text-end">
+				<a tyle="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#createTask" data-list-id="{{ list.ID }}">
+					<i class="bi bi-plus-square me-1"></i>
+					new task
+				</a>
+			</div>
+		</div>
 
-    <!-- Por hacer -->
-    <h6 class="text-muted">Por Hacer</h6>
-    <ul class="list-unstyled mb-5">
-        {% for tarea in tasks %}
-        {% if tarea.estado == 0  %}
-            <li class="d-flex align-items-center mb-2">
-                <span class="me-2" style="color: #FF3B3B; font-size: 1.5rem;">◯</span>
-                {{ tarea.titulo }}
-            </li>
-        {% endif %}
-        {% endfor %}
-    </ul>
+		<!-- Por hacer -->
+		<h6 class="text-muted">Por Hacer</h6>
+		<ul class="list-unstyled mb-5">
+			{% for tarea in tasks %}
+				{% if tarea.estado == 0  %}
+					<li class="d-flex align-items-center mb-2">
+						<span class="me-2" style="color: #FF3B3B; font-size: 1.5rem;">◯</span>
+						{{ tarea.titulo }}
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
 
-    <!-- Hechas -->
-<h6 class="text-muted">Hechas</h6>
-<ul class="list-unstyled">
-    {% set hay_tareas_hechas = false %}
-    {% for tarea in tasks %}
-        {% if tarea.estado == 1 %}
-            <li class="d-flex align-items-center mb-2">
- <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">{{ tarea.titulo }}
-            </li>
-        {% endif %}
-    {% endfor %}
-</ul>
-</div>
+		<!-- Hechas -->
+		<h6 class="text-muted">Hechas</h6>
+		<ul class="list-unstyled">
+			{% set hay_tareas_hechas = false %}
+			{% for tarea in tasks %}
+				{% if tarea.estado == 1 %}
+					<li class="d-flex align-items-center mb-2">
+						<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">{{ tarea.titulo }}
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
 
 {% endblock %}
