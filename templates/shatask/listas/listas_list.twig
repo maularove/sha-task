@@ -11,8 +11,9 @@
 				<div class="col-md-3 mb-4">
 					<div
 						class="card">
+
 						<!-- Encabezado rosado con dropdown de tres puntos -->
-						<div class="card-header d-flex justify-content-between align-items-start" style="background-color: #FF3B3B;">
+						<div class="card-header d-flex justify-content-between align-items-start" style="background-color: #FF3B3B; outline: 1px solid #FF3B3B;">
 							<div></div>
 							<!-- espacio vacío para alinear a la derecha -->
 							<div class="dropdown">
@@ -30,10 +31,12 @@
 							</div>
 						</div>
 
-						<!-- Cuerpo de la tarjeta -->
+						<a href="" class="card-lista">
 						<div class="card-body">
 							<h5 class="card-title">{{ list.nombre }}</h5>
 						</div>
+						</a>
+						
 					</div>
 				</div>
 			{% endfor %}
