@@ -9,7 +9,28 @@
 		<div class="row">
 			{% for list in lists %}
 				<div class="col-md-3 mb-4">
-					<div class="card">
+					<div
+						class="card">
+						<!-- Encabezado rosado con dropdown de tres puntos -->
+						<div class="card-header d-flex justify-content-between align-items-start" style="background-color: #FF3B3B;">
+							<div></div>
+							<!-- espacio vacío para alinear a la derecha -->
+							<div class="dropdown">
+								<button class="btn btn-link text-dark p-0" type="button" id="dropdownMenuButton-1" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="bi bi-list text-white fs-2 fw-bold"></i>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton-1">
+									<li>
+										<a class="dropdown-item" href="#">Eliminar Lista</a>
+									</li>
+									<li>
+										<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updateModalList" data-list-id="{{ list.ID }}" data-list-nombre="{{ list.nombre }}" data-list-user-id="{{ list.user_id }}">Cambiar nombre de lista</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Cuerpo de la tarjeta -->
 						<div class="card-body">
 							<h5 class="card-title">{{ list.nombre }}</h5>
 						</div>

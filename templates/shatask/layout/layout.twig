@@ -12,8 +12,11 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"/>
 		<!--end::Fonts-->
 
-		<!--begin::Vendor Stylesheets(used for this page only)-->
-		<link href="{{ full_path() }}/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css"/> <link href="{{ full_path() }}/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"/>
+		<!-- Bootstrap Icons -->
+		<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> <!--begin::Vendor Stylesheets(used for this page only)-->
+		<link href="{{ full_path() }}/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css"/>
+		<link href="{{ full_path() }}/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"/>
 		<!--end::Vendor Stylesheets-->
 
 		<!-- Bootstrap CSS for layout styling like behigh -->
@@ -28,6 +31,7 @@
 		<div class="d-flex" style="height: 100vh;">
 			{% include '@shatask/layout/partials/sidebar.twig' %}
 			{% include '@shatask/layout/components/create-list.twig' %}
+			{% include '@shatask/layout/components/update-list.twig' %}
 
 			<main class="flex-grow-1 p-4" style="">
 				{% block content %}
@@ -37,15 +41,31 @@
 		</div>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<!-- jQuery (necesario si usas $) -->
+		{# ************* #}<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
 		<script src="{{ full_path() }}/assets/js/bootstrap.bundle.min.js"></script>
+		<script src="{{ full_path() }}/assets/js/modals/update-list.js"></script>
 		{# // <script src="{{ full_path() }}/assets/js/custom/utilities/modals/users-search.js"></script>
-																// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
+																																																																																																												// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
 		{% block extraJS %}{% endblock %}
 
 		{% block extraCSS %}
 			<style>
 				.active {
 					background-color: #FFE9E9;
+				}
+
+				.btn-outline-secondary {
+					padding: 10px;
+					border: 1px solid #FF3B3B;
+					color: #FF3B3B;
+					transition: all 0.3s ease;
+				}
+
+				.btn-outline-secondary:hover {
+					background-color: #FFACAC;
+					color: #FFFFFF;
+					border: 1px solid #FFACAC;
 				}
 			</style>
 		{% endblock %}
