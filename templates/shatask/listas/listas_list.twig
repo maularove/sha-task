@@ -21,7 +21,7 @@
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton-1">
 									<li>
-										<a class="dropdown-item" href="#">Eliminar Lista</a>
+										<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModalList" data-list-id="{{ list.ID }}" data-list-nombre="{{ list.nombre }}" data-list-user-id="{{ list.user_id }}">Eliminar Lista</a>
 									</li>
 									<li>
 										<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#updateModalList" data-list-id="{{ list.ID }}" data-list-nombre="{{ list.nombre }}" data-list-user-id="{{ list.user_id }}">Cambiar nombre de lista</a>

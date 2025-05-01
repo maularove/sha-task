@@ -1,5 +1,6 @@
 <?php
 
+use App\Shatask\Controllers\ListasDeletePostController;
 use App\Shatask\Controllers\ListasGetController;
 use App\Shatask\Controllers\ListasSavePostController;
 use App\Shatask\Middlewares\AuthMiddleware;
@@ -28,6 +29,7 @@ use App\Shatask\Controllers\Auth\LogoutPostController;
         $group->group('', function (RouteCollectorProxy $group): void {
             $group->get('/listas', ListasGetController::class)->setName('shatask.listas.get.list');
             $group->post('/listas-save', ListasSavePostController::class)->setName('shatask.listas.post.save');
+            $group->post('/listas-delete', ListasDeletePostController::class)->setName('shatask.listas.post.delete');
             // $group->get('/departamentos', DepartmentListGetController::class)->setName('adminrrhh.department.get.list');
             // $group->get('/empresas', CompanyListGetController::class)->setName('adminrrhh.company.get.list');
             // $group->get('/configuracion_mailing', MailingListGetController::class)->setName('adminrrhh.mailing.get.list');
