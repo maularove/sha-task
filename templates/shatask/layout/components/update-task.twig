@@ -1,0 +1,30 @@
+<div class="modal fade" id="updateModalTask" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content p-2" style="border-radius: 10px;">
+			<div class="modal-header p-3">
+				<h5 class="modal-title" id="modalTitle">Crear nueva tarea</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body pb-0">
+
+				<form id="userForm" method="POST" action="{{ url_for('shatask.tareas.post.save') }}">
+					<input type="hidden" name="id" value="{{ task.ID }}">
+					<input type="hidden" name="lista_id" value="{{ task.lista_id }}">
+					<input type="hidden" name="titulo" value="{{ task.titulo }}">
+					<input type="hidden" name="descripcion" value="{{ task.descripcion }}">
+					<div class="mb-3">
+						<label class="form-label">Título</label>
+						<input type="text" name="titulo" class="form-control" placeholder="Pon el título de la tarea">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Descipción</label>
+						<textarea id="descriptionTask" name="descripcion" class="form-control" rows="5" placeholder="Escribe tu mensaje..."></textarea>
+					</div>
+					<div class="modal-footer p-0">
+						<button type="submit" id="submitUser" class="btn text-white w-100 mt-3" style="background-color: #FF3B3B;">Modificar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

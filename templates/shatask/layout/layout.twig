@@ -34,6 +34,7 @@
 			{% include '@shatask/layout/components/update-list.twig' %}
 			{% include '@shatask/layout/components/delete-list.twig' %}
 			{% include '@shatask/layout/components/create-task.twig' %}
+			{% include '@shatask/layout/components/update-task.twig' %}
 
 			<main class="flex-grow-1 p-4" style="">
 				{% block content %}
@@ -48,8 +49,9 @@
 		<script src="{{ full_path() }}/assets/js/bootstrap.bundle.min.js"></script>
 		<script src="{{ full_path() }}/assets/js/modals/update-list.js"></script>
 		<script src="{{ full_path() }}/assets/js/modals/delete-list.js"></script>
+		<script src="{{ full_path() }}/assets/js/modals/update-task.js"></script>
 		{# // <script src="{{ full_path() }}/assets/js/custom/utilities/modals/users-search.js"></script>
-																																																																																																																// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
+																																																																																																																																														// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
 		{% block extraJS %}{% endblock %}
 
 		{% block extraCSS %}

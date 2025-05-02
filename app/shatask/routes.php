@@ -33,7 +33,7 @@ use App\Shatask\Controllers\Auth\LogoutPostController;
             $group->post('/listas-save', ListasSavePostController::class)->setName('shatask.listas.post.save');
             $group->post('/listas-delete', ListasDeletePostController::class)->setName('shatask.listas.post.delete');
             $group->get('/listas/{lista_id}', TareasGetController::class)->setName('shatask.tareas.get.list');
-            $group->post('/listas/tarea-save', TareasSavePostController::class)->setName('shatask.tasks.post.save');
+            $group->post('/listas/tarea-save', TareasSavePostController::class)->setName('shatask.tareas.post.save');
             // $group->get('/departamentos', DepartmentListGetController::class)->setName('adminrrhh.department.get.list');
             // $group->get('/empresas', CompanyListGetController::class)->setName('adminrrhh.company.get.list');
             // $group->get('/configuracion_mailing', MailingListGetController::class)->setName('adminrrhh.mailing.get.list');
