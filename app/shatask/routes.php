@@ -3,6 +3,7 @@
 use App\Shatask\Controllers\ListasDeletePostController;
 use App\Shatask\Controllers\ListasGetController;
 use App\Shatask\Controllers\ListasSavePostController;
+use App\Shatask\Controllers\TareasDeletePostController;
 use App\Shatask\Controllers\TareasGetController;
 use App\Shatask\Controllers\TareasSavePostController;
 use App\Shatask\Middlewares\AuthMiddleware;
@@ -34,6 +35,7 @@ use App\Shatask\Controllers\Auth\LogoutPostController;
             $group->post('/listas-delete', ListasDeletePostController::class)->setName('shatask.listas.post.delete');
             $group->get('/listas/{lista_id}', TareasGetController::class)->setName('shatask.tareas.get.list');
             $group->post('/listas/tarea-save', TareasSavePostController::class)->setName('shatask.tareas.post.save');
+            $group->post('/listas/tarea-delete', TareasDeletePostController::class)->setName('shatask.tareas.post.delete');
             // $group->get('/departamentos', DepartmentListGetController::class)->setName('adminrrhh.department.get.list');
             // $group->get('/empresas', CompanyListGetController::class)->setName('adminrrhh.company.get.list');
             // $group->get('/configuracion_mailing', MailingListGetController::class)->setName('adminrrhh.mailing.get.list');
