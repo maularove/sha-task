@@ -36,7 +36,12 @@ final class TareasSavePostController extends PostController
             $task->lista_id = $data['lista_id'] ?? $task->lista_id;
             $task->titulo = $data['titulo'] ?? $task->titulo;
             $task->descripcion = $data['descripcion'] ?? $task->descripcion;
-            $task->estado = $data['estado'] ?? $task->estado;
+
+            if (!$task->ID) {
+                $task->estado = $data['estado'] ?? 0;
+            } else {
+                $task->estado = $data['estado'] ?? $task->estado;
+            }
 
             $taskId = $this->tareaRepository->save($task);
             $task->ID = $taskId;
