@@ -28,7 +28,8 @@ final class TareasSavePostController extends PostController
             $data = $request->getParsedBody();
 
             if (!empty($data['id'])) {
-                $task = $this->tareaRepository->find($data['id']);
+                $taskId = (int) $data['id'];
+                $task = $this->tareaRepository->find($taskId);
             } else {
                 $task = new Tarea($this->container);
             }
