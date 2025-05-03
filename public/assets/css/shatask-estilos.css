@@ -1,0 +1,141 @@
+.custom-box {
+    box-shadow: 0 10px 14px 0 rgba(15, 42, 81, 0.03);
+    background-color: #FFFFFF;
+    border: 1px solid #F1F1F4;
+    border-radius: 20px;
+}
+
+.margin-main {
+    margin-left: 260px;
+}
+
+.scroll-ul {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    list-style: none;
+}
+
+.container-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+    width: 260px;
+    border-right: 1px solid #C9C9C9;
+}
+
+.btn-outline-primary {
+    padding: 10px;
+    background-color: #FF3B3B;
+    color: #FFFFFF;
+    border: 1px solid #FF3B3B;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    border: 1px solid #FFACAC;
+    background-color: #FFFFFF;
+    color: #FFACAC;
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+    background-color: #FFFFFF;
+}
+
+.btn-outline-secondary {
+    padding: 10px;
+    border: 1px solid #FF3B3B;
+    color: #FF3B3B;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #FFACAC;
+    color: #FFFFFF;
+    border: 1px solid #FFACAC;
+}
+
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus {
+    background-color: #FFACAC;
+}
+
+.btn-primary {
+    color: #FF3B3B;
+    border: none;
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+.btn-primary:hover {
+    color: #FFACAC;
+    background-color: #FFFFFF;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #FFFFFF !important;
+}
+
+.card-head-colorr {
+    background-color: #FF3B3B;
+    outline: 1px solid #FF3B3B;
+}
+
+.card-lista {
+    text-decoration: none;
+    color: #050315;
+}
+
+.card-lista:hover {
+    text-decoration: none;
+    color: #FF3B3B;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tarea-color {
+    color: #050315;
+    cursor: pointer;
+}
+
+.complement-checkbox {
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 100%;
+    border: 1px solid #FF3B3B;
+    background-color: white;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.complement-checkbox:checked {
+    border: 7px solid #FF3B3B;
+}
+
+.width-150 {
+    width: 150px;
+}
+
+.bradius-10 {
+    border-radius: 10px;
+}
+
+.max-width-400 {
+    max-width: 400px;
+}
+
+.size-logo {
+    width: 180px;
+    height: 45px;
+}
+
+.text-colo-primaryy {
+    color: #071437;
+}

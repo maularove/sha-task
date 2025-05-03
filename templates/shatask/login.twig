@@ -6,38 +6,41 @@
 		<title>Iniciar sesión | SHA-TASK</title>
 
 		<link rel="stylesheet" href="{{ full_path() }}/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ full_path() }}/assets/css/shatask-estilos.css">
+
 	</head>
+
 	<body>
 		<div class="container d-flex justify-content-center align-items-center min-vh-100">
-			<div class="w-100" style="max-width: 400px;">
+			<div class="w-100 max-width-400">
 				<div class="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
 
 					<div class="d-flex flex-center flex-column flex-lg-row-fluid">
 
-						<div class="w-lg-350px p-5" style="box-shadow: 0px 10px 14px 0px rgba(15, 42, 81, 0.03); background-color: #FFFFFF; border: 1px solid #F1F1F4; border-radius: 20px;">
+						<div class="w-lg-350px custom-box p-5">
 							<form class="form w-100" id="kt_sign_in_form" method="post" action="{{ full_path() }}/shatask/auth">
 
 
 								<div class="mb-3">
 									<a href="{{ full_path() }}/shatask/login">
-										<img src="{{ full_path() }}/images/logo-letra-igual-sha-task-pink.png" class="max-h-5px" style="width: 180pxpx; height: 45px;" alt="Logo">
+										<img src="{{ full_path() }}/images/logo-letra-igual-sha-task-pink.png" class="size-logo max-h-5px" alt="Logo">
 									</a>
 								</div>
 
 								<div class="mb-2">
-									<h1 class="text-dark fw-bold fs-3" style="color: #071437;">Iniciar sesión</h1>
+									<h1 class="text-dark fw-bold fs-3 text-color-primaryy">Iniciar sesión</h1>
 								</div>
 
 								<div class="mb-3 text-start">
 									<label for="username" class="form-label">Nombre de usuario</label>
-									<input type="text" class="form-control" id="username" name="username" placeholder="email@email.com" required="">
+									<input type="text" class="form-control" id="username" name="username" placeholder="Introduce nombre de usuario" required="">
 								</div>
 
 								<div class="mb-4 text-start">
 									<label for="password" class="form-label">Contraseña</label>
 									<input type="password" class="form-control" id="password" name="password" placeholder="Introduce contraseña" required="">
 								</div>
-								<button id="login" type="submit" class="btn w-100 text-white" style="background-color: #FF3B3B;">Acceder</button>
+								<button id="login" type="submit" class="btn btn-outline-primary w-100">Acceder</button>
 							</form>
 						</div>
 					</div>
