@@ -52,7 +52,7 @@
 		<script src="{{ full_path() }}/assets/js/modals/update-task.js"></script>
 		<script src="{{ full_path() }}/assets/js/modals/button-active-task.js"></script>
 		{# // <script src="{{ full_path() }}/assets/js/custom/utilities/modals/users-search.js"></script>
-																																																																																																																																																																																																																																																																																																																																																																								// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
+																																																																																																																																																																																																																																																																																																																																																																																																																																														// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
 		{% block extraJS %}{% endblock %}
 
 		{% block extraCSS %}
@@ -71,6 +71,10 @@
 					color: #FFACAC;
 				}
 
+				.btn-outline-primary:hover {
+					border: 1px solid #FFACAC;
+				}
+
 				.btn-outline-secondary {
 					padding: 10px;
 					border: 1px solid #FF3B3B;
@@ -82,6 +86,26 @@
 					background-color: #FFACAC;
 					color: #FFFFFF;
 					border: 1px solid #FFACAC;
+				}
+
+				.btn-outline-secondary:active {
+					background-color: #FFACAC;
+				}
+
+				.btn-primary {
+					color: #FF3B3B;
+					border: none;
+					background-color: #FFFFFF;
+					padding: 10px;
+				}
+
+				.btn-primary:hover {
+					color: #FFACAC;
+					background-color: #FFFFFF;
+				}
+
+				.btn-primary:active {
+					background-color: #FFFFFF !important;
 				}
 
 				.card-lista {
@@ -111,6 +135,10 @@
 
 				.complement-checkbox:checked {
 					border: 7px solid #FF3B3B;
+				}
+
+				.width-150 {
+					width: 150px;
 				}
 			</style>
 		{% endblock %}

@@ -37,6 +37,14 @@ final class TareasGetController extends FrontController
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
 
+        $usuario = $this->authService->getUsuario();
+
+        if (!$usuario) {
+            return $response->withHeader('Location', '/shatask/login')->withStatus(302);
+        }
+
+        $listas = $this->listaRepository->findByUserId($usuario->ID);
+
         $listaId = $args['lista_id'] ?? $request->getQueryParams()['lista_id'] ?? null;
         $tasks = $this->tareaRepository->findByListId((int)$listaId);
 
@@ -44,7 +52,8 @@ final class TareasGetController extends FrontController
 
         return $this->twig->render($response, '@shatask/tareas/tareas_list.twig', [
             'tasks' => $tasks,
-            'list'=> $list
+            'list'=> $list,
+            'lists' => $listas,
         ]);
     }
 }
