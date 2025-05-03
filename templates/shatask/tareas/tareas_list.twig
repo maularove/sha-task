@@ -1,7 +1,7 @@
 {% extends '@shatask/layout/layout.twig' %}
 
 {% block content %}
-	<div class="container mt-5">
+	<div class="container mt-4">
 		<div class="row align-items-center mb-5 me-5">
 			<div class="col text-start"></div>
 			<div class="col text-center">
@@ -22,7 +22,7 @@
 				{% if tarea.estado == 0  %}
 					<li class="d-flex align-items-center mb-2" data-tarea-id="{{ tarea.ID }}">
 						<input class="complement-checkbox" type="checkbox" name="estado" value="1" id="checkboxNoLabel" aria-label="...">
-						<a style="color: #050315; cursor: pointer;" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#updateModalTask" data-tarea-id="{{ tarea.ID }}" data-tarea-titulo="{{ tarea.titulo }}" data-tarea-descripcion="{{ tarea.descripcion }}" data-tarea-lista-id="{{ tarea.lista_id }}">{{ tarea.titulo }}</a>
+						<a class="text-decoration-none tarea-color" data-bs-toggle="modal" data-bs-target="#updateModalTask" data-tarea-id="{{ tarea.ID }}" data-tarea-titulo="{{ tarea.titulo }}" data-tarea-descripcion="{{ tarea.descripcion }}" data-tarea-lista-id="{{ tarea.lista_id }}">{{ tarea.titulo }}</a>
 					</li>
 				{% endif %}
 			{% endfor %}
@@ -36,7 +36,7 @@
 				{% if tarea.estado == 1 %}
 					<li class="d-flex align-items-center mb-2" data-tarea-id="{{ tarea.ID }}">
 						<input class="complement-checkbox" type="checkbox" name="estado" value="1" id="checkboxNoLabel" aria-label="..." checked>
-						<a style="color: #050315; cursor: pointer;" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#updateModalTask" data-tarea-id="{{ tarea.ID }}" data-tarea-titulo="{{ tarea.titulo }}" data-tarea-descripcion="{{ tarea.descripcion }}" data-tarea-lista-id="{{ tarea.lista_id }}">{{ tarea.titulo }}</a>
+						<a class="text-decoration-none tarea-color" data-bs-toggle="modal" data-bs-target="#updateModalTask" data-tarea-id="{{ tarea.ID }}" data-tarea-titulo="{{ tarea.titulo }}" data-tarea-descripcion="{{ tarea.descripcion }}" data-tarea-lista-id="{{ tarea.lista_id }}">{{ tarea.titulo }}</a>
 					</li>
 				{% endif %}
 			{% endfor %}

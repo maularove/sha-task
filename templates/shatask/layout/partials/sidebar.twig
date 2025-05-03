@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-5 align-items-center" style="width: 260px; border-right: 1px solid #C9C9C9;">
+<div class="d-flex flex-column flex-shrink-0 p-5 align-items-center container-sidebar">
 	<a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
 		<span class="fs-4">
 			<img src="{{ full_path() }}/images/logo-letra-igual-sha-task-pink.png" alt="Logo" height="40" class="me-2">
@@ -18,13 +18,12 @@
 			</a>
 		</li>
 	</ul>
-
-	<ul class="nav nav-pills flex-column mb-auto">
-		<div class="width-150">
-			<small class="text-muted">Private</small>
-		</div>
+	<div class="align-self-start">
+		<small class="text-muted">Private</small>
+	</div>
+	<ul class="flex-column mb-auto scroll-ul">
 		{% for list in lists %}
-			<li class="mt-1 mb-1">
+			<li class="mt-3 mb-3 width-150">
 				<a href="{{ url_for('shatask.tareas.get.list', { lista_id: list.ID }) }}" class="nav-link link-dark">
 					{{ list.nombre }}
 				</a>

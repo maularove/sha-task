@@ -36,7 +36,7 @@
 			{% include '@shatask/layout/components/create-task.twig' %}
 			{% include '@shatask/layout/components/update-task.twig' %}
 
-			<main class="flex-grow-1 p-4" style="">
+			<main class="flex-grow-1 p-4 margin-main" style="">
 				{% block content %}
 					<!-- Contenido de cada página -->
 				{% endblock %}
@@ -52,11 +52,32 @@
 		<script src="{{ full_path() }}/assets/js/modals/update-task.js"></script>
 		<script src="{{ full_path() }}/assets/js/modals/button-active-task.js"></script>
 		{# // <script src="{{ full_path() }}/assets/js/custom/utilities/modals/users-search.js"></script>
-																																																																																																																																																																																																																																																																																																																																																																																																																																														// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
 		{% block extraJS %}{% endblock %}
 
 		{% block extraCSS %}
 			<style>
+				.margin-main {
+					margin-left: 260px;
+				}
+
+				.scroll-ul {
+					max-height: 500px;
+					overflow-y: auto;
+					overflow-x: hidden;
+					list-style: none;
+				}
+
+				.container-sidebar {
+					position: fixed;
+					top: 0;
+					left: 0;
+					height: 100vh;
+					overflow: hidden;
+					width: 260px;
+					border-right: 1px solid #C9C9C9;
+				}
+
 				.btn-outline-primary {
 					padding: 10px;
 					background-color: #FF3B3B;
@@ -71,8 +92,9 @@
 					color: #FFACAC;
 				}
 
-				.btn-outline-primary:hover {
-					border: 1px solid #FFACAC;
+				.btn-outline-primary:active,
+				.btn-outline-primary:focus {
+					background-color: #FFFFFF;
 				}
 
 				.btn-outline-secondary {
@@ -88,7 +110,8 @@
 					border: 1px solid #FFACAC;
 				}
 
-				.btn-outline-secondary:active {
+				.btn-outline-secondary:active,
+				.btn-outline-secondary:focus {
 					background-color: #FFACAC;
 				}
 
@@ -104,8 +127,14 @@
 					background-color: #FFFFFF;
 				}
 
-				.btn-primary:active {
+				.btn-primary:active,
+				.btn-primary:focus {
 					background-color: #FFFFFF !important;
+				}
+
+				.card-head-colorr {
+					background-color: #FF3B3B;
+					outline: 1px solid #FF3B3B;
 				}
 
 				.card-lista {
@@ -117,6 +146,11 @@
 					text-decoration: none;
 					color: #FF3B3B;
 					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				}
+
+				.tarea-color {
+					color: #050315;
+					cursor: pointer;
 				}
 
 				.complement-checkbox {
@@ -139,6 +173,10 @@
 
 				.width-150 {
 					width: 150px;
+				}
+
+				.bradius-10 {
+					border-radius: 10px;
 				}
 			</style>
 		{% endblock %}
