@@ -8,7 +8,7 @@
 				<h1 class="mb-0">{{ list.nombre | upper }}</h1>
 			</div>
 			<div class="col text-end">
-				<a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#createTask" data-list-id="{{ list.ID }}">
+				<a type="button" class="btn btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#createTask" data-list-id="{{ list.ID }}">
 					<i class="bi bi-plus-square me-1"></i>
 					new task
 				</a>
@@ -21,7 +21,7 @@
 			{% for tarea in tasks %}
 				{% if tarea.estado == 0  %}
 					<li class="d-flex align-items-center mb-2" data-tarea-id="{{ tarea.ID }}">
-						<input class="form-check-input complement-checkbox" type="checkbox" name="estado" value="1" id="checkboxNoLabel" aria-label="...">
+						<input class="complement-checkbox" type="checkbox" name="estado" value="1" id="checkboxNoLabel" aria-label="...">
 						<a style="color: #050315; cursor: pointer;" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#updateModalTask" data-tarea-id="{{ tarea.ID }}" data-tarea-titulo="{{ tarea.titulo }}" data-tarea-descripcion="{{ tarea.descripcion }}" data-tarea-lista-id="{{ tarea.lista_id }}">{{ tarea.titulo }}</a>
 					</li>
 				{% endif %}
@@ -35,7 +35,7 @@
 			{% for tarea in tasks %}
 				{% if tarea.estado == 1 %}
 					<li class="d-flex align-items-center mb-2" data-tarea-id="{{ tarea.ID }}">
-						<input class="form-check-input complement-checkbox" type="checkbox" name="estado" value="1" id="checkboxNoLabel" aria-label="..." checked>
+						<input class="complement-checkbox" type="checkbox" name="estado" value="1" id="checkboxNoLabel" aria-label="..." checked>
 						<a style="color: #050315; cursor: pointer;" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#updateModalTask" data-tarea-id="{{ tarea.ID }}" data-tarea-titulo="{{ tarea.titulo }}" data-tarea-descripcion="{{ tarea.descripcion }}" data-tarea-lista-id="{{ tarea.lista_id }}">{{ tarea.titulo }}</a>
 					</li>
 				{% endif %}

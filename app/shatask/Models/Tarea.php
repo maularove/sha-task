@@ -3,6 +3,7 @@
 namespace App\Shatask\Models;
 
 use App\Shared\Interfaces\ModelInterface;
+
 use App\Shared\Models\BaseModel;
 
 final class Tarea extends BaseModel implements ModelInterface

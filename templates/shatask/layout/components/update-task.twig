@@ -22,12 +22,12 @@
 					</div>
 					<div class="modal-footer p-0 d-flex justify-content-between gap-2">
 						<button type="submit" id="submitUser" class="btn text-white w-100 mt-3" style="background-color: #FF3B3B;">Modificar</button>
-				</form>
+					</form>
 					<form id="deleteForm" class="w-100" method="POST" action="{{ url_for('shatask.tareas.post.delete') }}" style="width: 200px;">
-                    	<input type="hidden" name="id" value="{{ task.ID}}">
-                    	<button type="submit" class="btn btn-outline-danger w-100">Eliminar</button>
-                	</form>
-					</div>
+						<input type="hidden" name="id" value="{{ task.ID}}">
+						<button type="submit" class="btn btn-outline-secondary w-100">Eliminar</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

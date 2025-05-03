@@ -52,13 +52,23 @@
 		<script src="{{ full_path() }}/assets/js/modals/update-task.js"></script>
 		<script src="{{ full_path() }}/assets/js/modals/button-active-task.js"></script>
 		{# // <script src="{{ full_path() }}/assets/js/custom/utilities/modals/users-search.js"></script>
-																																																																																																																																																																								// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
+																																																																																																																																																																																																																																																																																																																																																																								// <script src="{{ full_path() }}/assets/js/cae/modal-empresa.js"></script> #}
 		{% block extraJS %}{% endblock %}
 
 		{% block extraCSS %}
 			<style>
-				.active {
-					background-color: #FFE9E9;
+				.btn-outline-primary {
+					padding: 10px;
+					background-color: #FF3B3B;
+					color: #FFFFFF;
+					border: 1px solid #FF3B3B;
+					transition: all 0.3s ease;
+				}
+
+				.btn-outline-primary:hover {
+					border: 1px solid #FFACAC;
+					background-color: #FFFFFF;
+					color: #FFACAC;
 				}
 
 				.btn-outline-secondary {
@@ -83,6 +93,24 @@
 					text-decoration: none;
 					color: #FF3B3B;
 					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				}
+
+				.complement-checkbox {
+					width: 1.4em;
+					height: 1.4em;
+					border-radius: 100%;
+					border: 1px solid #FF3B3B;
+					background-color: white;
+					appearance: none;
+					-webkit-appearance: none;
+					outline: none;
+					cursor: pointer;
+					position: relative;
+					margin-right: 10px;
+				}
+
+				.complement-checkbox:checked {
+					border: 7px solid #FF3B3B;
 				}
 			</style>
 		{% endblock %}
