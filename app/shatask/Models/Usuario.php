@@ -11,4 +11,7 @@ final class Usuario extends BaseModel implements ModelInterface
     public $nombre;
     public $usuario;
     public $password;
+
+    public const DB_IDENTIFIER = 'ID';
+
 }
