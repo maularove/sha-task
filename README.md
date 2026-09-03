@@ -8,7 +8,7 @@
 
 ## 📋 Descripción
 
-**SHA Task** es una aplicación web desarrollada como **Proyecto Final del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (DAW)**.
+**Sha-Task** es una aplicación web desarrollada como **Proyecto Final del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (DAW)**.
 
 El proyecto está orientado a la gestión de tareas y usuarios, proporcionando una aplicación web estructurada y preparada para ejecutarse mediante un entorno Dockerizado.
 
