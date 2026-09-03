@@ -52,11 +52,11 @@ la configuración del entorno con Docker, hasta la implementación del backend e
 
 | Login | Home — Mis listas |
 |---|---|
-| ![Login](./screenshots/01-login.png) | ![Home](./screenshots/02-home-listas.png) |
+| ![Login](01-login.png) | ![Home](02-home-listas.png) |
 
 | Vista de lista (Por hacer / Hechas) | Crear nueva tarea |
 |---|---|
-| ![Vista de lista](./screenshots/03-vista-lista.png) | ![Crear tarea](./screenshots/04-crear-tarea.png) |
+| ![Vista de lista](03-vista-lista.png) | ![Crear tarea](04-crear-tarea.png) |
 
 ---
 
