@@ -1,4 +1,4 @@
-# SHA Task
+# SHA-TASK
 
 Aplicación web de gestión de tareas desarrollada como proyecto final
 del CFGS de Desarrollo de Aplicaciones Web.
